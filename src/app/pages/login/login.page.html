@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-item>
+      <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-label (click)="resetpwd()">Forget Password ?
+    </ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-button type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-label style="text-align: center"> <a [routerLink]="['/signup']">Create a new account</a>
+  </ion-label>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>@ToDo-list</ion-title>
+  </ion-toolbar>
+</ion-footer>

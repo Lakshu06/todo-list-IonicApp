@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="signupForm" (submit)="signupUser()">
+
+    <ion-item>
+      <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
+      <p>Please enter a valid email.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="retype" type="password" placeholder="ConfirmPassword"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      Are You Already have Account ?
+      <a [routerLink]="['/login']">SignIn</a>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-button type="submit" [disabled]="!signupForm.valid">Create an Account</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>@ToDo-list</ion-title>
+  </ion-toolbar>
+</ion-footer>
