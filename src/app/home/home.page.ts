@@ -148,6 +148,10 @@ export class HomePage {
     } as any);
     (await alert).present();
   }
-
-
+  gotohome() {
+    this.router.navigateByUrl('/setting');
+  }
+  gotoprofile() {
+    this.router.navigateByUrl('/view-profile');
+  }
 }

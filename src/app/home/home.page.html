@@ -1,6 +1,11 @@
 <ion-header>
     <ion-toolbar color='primary'>
-        <ion-title>To-do List</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            To-do List
+        </ion-title>
 
 
         <ion-title slot="end">
@@ -13,6 +18,24 @@
     </ion-toolbar>
 </ion-header>
 
+<ion-menu side="start" menuId="first">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item (click)='gotoprofile()'>
+                <ion-icon name="contact"></ion-icon>Profile
+            </ion-item>
+            <ion-item (click)='gotohome()'>
+                <ion-icon name="settings"></ion-icon>Settings
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
 <ion-content padding>
     <ion-item>
         <ion-input type="text" placeholder="Enter task" [(ngModel)]="taskName"></ion-input>

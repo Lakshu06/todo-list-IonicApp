@@ -5,27 +5,43 @@
 </ion-header>
 
 <ion-content>
-
   <form [formGroup]="signupForm" (submit)="signupUser()">
 
-    <ion-item>
+    <ion-item class="item-note">
       <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
-      <p>Please enter a valid email.</p>
     </ion-item>
+    <ion-item lines="none" class="error-message" *ngIf=" signupForm.get('firstName').status === 'INVALID'">
+      <ion-text color="danger" slot="end">please enter alphabets only</ion-text>
+    </ion-item>
+    <!-- signupForm.get('firstName').hasError(validation.type) && -->
 
     <ion-item>
       <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="error-message" *ngIf=" signupForm.get('lastName').status === 'INVALID'">
+      <ion-text color="danger" slot="end">Please enter correct lastName</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    <ion-item lines="none" class="error-message" *ngIf=" signupForm.get('email').status === 'INVALID'">
+      <ion-text color="danger" slot="end">Please enter correct email</ion-text>
     </ion-item>
 
     <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="error-message" *ngIf=" signupForm.get('password').status === 'INVALID'">
+      <ion-text color="danger" slot="end">Please enter correct password</ion-text>
+    </ion-item>
+
+
+    <ion-item>
       <ion-input formControlName="retype" type="password" placeholder="ConfirmPassword"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="error-message" *ngIf=" signupForm.get('retype').status =='INVALID'">
+      <ion-text color="danger" slot="end">Please enter correct retype</ion-text>
     </ion-item>
 
     <ion-item>

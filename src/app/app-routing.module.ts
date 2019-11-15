@@ -9,6 +9,7 @@ const routes: Routes = [
   // tslint:disable-next-line: max-line-length
   { path: 'forgetpassword', loadChildren: () => import('./pages/forgetpassword/forgetpassword.module').then(m => m.ForgetpasswordPageModule) },
   { path: 'view-profile', loadChildren: './pages/view-profile/view-profile.module#ViewProfilePageModule' },
+  { path: 'setting', loadChildren: './pages/setting/setting.module#SettingPageModule' },
 ];
 
 @NgModule({

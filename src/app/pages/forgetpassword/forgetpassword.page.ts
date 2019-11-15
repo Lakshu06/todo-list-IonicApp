@@ -27,6 +27,7 @@ export class ForgetpasswordPage implements OnInit {
   ngOnInit() {
   }
   resetUserPwd() {
+    console.log("working");
     this.afAuth.auth.sendPasswordResetEmail(this.resetPwdForm.value.email).then(async (user) => {
       const alert = this.alertCtrl.create({
         message: 'We just sent a link to reset your password to your email.',

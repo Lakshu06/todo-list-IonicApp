@@ -17,7 +17,7 @@ export class ViewProfilePage implements OnInit {
   userId: any;
   email: any;
 
-  logo = './assets/image/profile.png';
+  logo = './assets/icon/profile.jpg';
 
   viewProfile() {
     this.userId = this.afAuth.auth.currentUser.uid;

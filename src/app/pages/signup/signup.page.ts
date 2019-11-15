@@ -49,6 +49,9 @@ export class SignupPage implements OnInit {
     return await this.loadingCtrl.dismiss().then(() => console.log('dismissed'));
   }
 
+  debug() {
+    console.log(this.signupForm.get('firstName'));
+  }
   signUp() {
     this.signupForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
@@ -59,13 +62,15 @@ export class SignupPage implements OnInit {
     });
   }
 
-  signUpUser() {
+  signupUser() {
+    console.log('fumction called');
 
     // tslint:disable-next-line: triple-equals
     if (this.signupForm.value.password == this.signupForm.value.retype) {
       this.presentLoading();
       this.afAuth.auth.createUserWithEmailAndPassword(this.signupForm.value.email, this.signupForm.value.password)
         .then((val) => {
+          console.log(val);
           this.dismiss();
           console.log(val);
           const userId = this.afAuth.auth.currentUser.uid;
@@ -80,6 +85,8 @@ export class SignupPage implements OnInit {
           this.router.navigateByUrl('/login');
         }, (error) => {
           this.dismiss();
+          console.log('error');
+          console.log(error);
           this.presentAlert(error.message);
         });
 
@@ -93,6 +100,7 @@ export class SignupPage implements OnInit {
   ngOnInit() {
     this.signUp();
   }
+
 
 }
 

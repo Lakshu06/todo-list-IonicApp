@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-icon size="large" slot="start" name="arrow-back" routerLink="/home"></ion-icon>
+    <ion-title>setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+    <ion-icon name="hammer"></ion-icon>Privacy
+  </ion-item>
+  <ion-item [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+    <ion-icon name="cog"></ion-icon>General Settings
+  </ion-item>
+  <ion-item [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+    <ion-icon name="contact"></ion-icon>Update Profile
+  </ion-item>
+
+</ion-content>
+<ion-footer color="primary">
+  <ion-toolbar>
+    <ion-title>
+      @ToDo-List
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
